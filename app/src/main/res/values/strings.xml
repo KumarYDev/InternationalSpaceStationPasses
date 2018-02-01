@@ -1,0 +1,14 @@
+<resources>
+    <string name="app_name">International Space Station Passes</string>
+    <string name="internetstatus">No Internet Connection</string>
+    <string name="permissionMessage">Enable the required Permission for the Application \n Go to Setting and Enable the Permissions</string>
+    <string name="permissionTile">PERMISSIONS NEEDED</string>
+    <string name="permissionPositiveButtonTile">PERMISSIONS</string>
+    <string name="permissionNegitiveButtonTile">CANCLE</string>
+    <string name="permissionToastMessage">PERMISSIONS ARE NOT ENABLED</string>
+    <string name="deviceLocationErrorToastMessage">GPS and Network Data are Not Working</string>
+    <string name="permissionStatus">Permission to Access GPS of device is not given</string>
+    <string name="loadingmessage">Loading.....</string>
+
+
+</resources>
