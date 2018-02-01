@@ -1,6 +1,7 @@
 package com.usermindarchive.h.internationalspacestationpasses.Presenter;
 
 import com.usermindarchive.h.internationalspacestationpasses.Model.Dagger.OpenNotifyBuild;
+import com.usermindarchive.h.internationalspacestationpasses.Model.Retrofit.OpenNotifyFailureEvent;
 import com.usermindarchive.h.internationalspacestationpasses.Utils.GPSDevice.GPSDevice;
 import com.usermindarchive.h.internationalspacestationpasses.Utils.GPSDevice.GPSDeviceEvent;
 import com.usermindarchive.h.internationalspacestationpasses.Model.Retrofit.OpenNotifyDataParser;
@@ -58,6 +59,17 @@ public class MainFragmentPresenter {
 
     }
 
+    // Registered Event method for OpenNotifyFailureEvent
+    // Network Failure Response Event
+    @Subscribe(threadMode = ThreadMode.MAIN)
+    public void onOpenNotifyFailureEvent(OpenNotifyFailureEvent openNotifyFailureEvent) {
+
+        // Passing the Network Response to UI
+        mainFragmentPresenterInterface.sendOpenNotifyAPIFailureResponseData(openNotifyFailureEvent.getOnFailureResponse());
+
+    }
+
+    //// Registered Event method for GPSDeviceEvent for getting the Latitude and Longitude of the device
     @Subscribe(threadMode = ThreadMode.MAIN)
     public void onGPSDeviceEvent(GPSDeviceEvent gpsDeviceEvent) {
         // Passing the Device Latitude and Longitude values to make network call
@@ -85,5 +97,6 @@ public class MainFragmentPresenter {
     public interface MainFragmentPresenterInterface{
     public void sendOpenNotifyAPIResponseData(List<Response> responseList);
 
-}
+    public void sendOpenNotifyAPIFailureResponseData(String onFailureResponse);
+    }
 }

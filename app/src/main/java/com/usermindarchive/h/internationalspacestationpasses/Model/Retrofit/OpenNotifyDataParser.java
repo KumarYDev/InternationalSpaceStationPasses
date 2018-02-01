@@ -70,7 +70,10 @@ public class OpenNotifyDataParser {
             // Method that execute when call is Failed
             @Override
             public void onFailure(Call<OpenNotify> call, Throwable t) {
-Log.e("406","Failed");
+
+                Log.e("406","Failed"+t.getMessage().toString());
+                // Event that passes the OnFailure response to presenter and make necessary update on UI
+                EventBus.getDefault().post(new OpenNotifyFailureEvent(t.getMessage().toString()));
             }
         });
     }

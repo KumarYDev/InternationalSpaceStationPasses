@@ -61,7 +61,7 @@ public class MainFragment extends Fragment implements MainFragmentPresenter.Main
         // Triggering the Network Call.
 //        makeOpenNotifyAPIcall.makeNetworkcall(lat,lon);
         mainFragmentPresenter.requestDeviceLocation();
-
+        status.setText(getResources().getString(R.string.loadingmessage));
         dataPresenter.setVisibility(View.GONE);
         status.setVisibility(View.VISIBLE);
 
@@ -107,6 +107,13 @@ public class MainFragment extends Fragment implements MainFragmentPresenter.Main
 
 
 
+    }
+
+    @Override
+    public void sendOpenNotifyAPIFailureResponseData(String onFailureResponse) {
+        dataPresenter.setVisibility(View.GONE);
+        status.setVisibility(View.VISIBLE);
+        status.setText(onFailureResponse);
     }
 
 

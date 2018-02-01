@@ -72,7 +72,7 @@ public class MainActivity extends AppCompatActivity {
             internetStatus.setVisibility(View.GONE);
 
             // Adding the MainFragment to Fragment Container to Display Response
-//            setMainFragment();
+            setMainFragment();
         }else{
             // If device does't have Internet
             clearMainFragment();
@@ -146,8 +146,6 @@ public class MainActivity extends AppCompatActivity {
                         ,6);
             }
 
-        }else {
-            setMainFragment();
         }
 
     }
@@ -171,30 +169,6 @@ public class MainActivity extends AppCompatActivity {
             }
         }
 
-
-
-
-/*
-        if (requestCode == 6) {
-
-            if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.M) {
-                if (!shouldShowRequestPermissionRationale(Manifest.permission.ACCESS_FINE_LOCATION)
-//                        &&
-//                        shouldShowRequestPermissionRationale(Manifest.permission.ACCESS_COARSE_LOCATION)
-                        ) {
-                    showPermmissionAlert();
-                }
-            }
-
-
-                if(grantResults[0] != PackageManager.PERMISSION_GRANTED){
-
-
-                }else {
-
-
-                }
-    }*/
     }
 
     private void showPermmissionAlert() {
